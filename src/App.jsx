@@ -6,7 +6,7 @@ import './App.css'
 
 function App() {
 
-  const [coords, setCoords] = useState()
+  const [coordsDefect, setCoordsDefect] = useState()
   const [weather, setWeather] = useState()
   const [changeTemp, setChangeTemp] = useState()
 
@@ -16,14 +16,14 @@ function App() {
         lat: pos.coords.latitude,
         lon: pos.coords.longitude,
       }
-      setCoords(obj)
+      setCoordsDefect(obj)
     }
     navigator.geolocation.getCurrentPosition(success)
   }, [])
   
   useEffect(() => {
-    if (coords) {
-      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=${getApiKey()}`
+    if (coordsDefect) {
+      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${coordsDefect.lat}&lon=${coordsDefect.lon}&appid=${getApiKey()}`
       axios.get(url)
         .then((res) => {
           setWeather(res.data)
@@ -37,16 +37,15 @@ function App() {
         })
         .catch(err => console.error(err))
     }
-  }, [coords])
+  }, [coordsDefect])
 
   return (
-    <div>
+    <div className='div'>
       <PrintDatesWeather 
         weather={weather} 
         changeTemp={changeTemp} 
         setChangeTemp={setChangeTemp}
       />
-      
     </div>
   )
 }
