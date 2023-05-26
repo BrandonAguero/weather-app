@@ -1,4 +1,12 @@
-const PrintDatesWeather = ({ weather }) => {
+import { changeDegreeTemp } from "../utils/changeTemp"
+
+const PrintDatesWeather = ({ weather, changeTemp, setChangeTemp}) => {
+
+    const handleChangeTemp = () => {
+        const convertTemp = changeDegreeTemp(changeTemp);
+        setChangeTemp(convertTemp)
+    }
+
     return (
         <>
             <header>
@@ -19,10 +27,10 @@ const PrintDatesWeather = ({ weather }) => {
                 </article>
             </main>
             <aside>
-                <h2>{weather?.main.temp}</h2>
+                <h2>{changeTemp?.temp} {changeTemp?.degree === 'K' ? '°K' : '°C'}</h2>
             </aside>
             <footer>
-                <button>Change to °F</button>
+                <button onClick={handleChangeTemp}>Change to{changeTemp?.degree === 'K' ? '°C' : '°K'}</button>
             </footer>
         </>
 
