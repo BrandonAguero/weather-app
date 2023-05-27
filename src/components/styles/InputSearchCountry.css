@@ -1,0 +1,49 @@
+.footer form h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.footer form {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 0.5rem;
+}
+.footer form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+.footer form div label {
+    font-size: 1rem;
+}
+.footer form div input {
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.5rem;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+.footer form div input:focus {
+    border: none;
+    outline: none;
+}
+.footer form div input::placeholder {
+    font-size: 1rem;
+    font-weight: lighter;
+}
+.footer form > input {
+    padding: 1em;
+    border: none;
+    border-radius: 1em;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: aqua;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}

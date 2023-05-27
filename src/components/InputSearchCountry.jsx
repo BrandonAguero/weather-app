@@ -1,4 +1,5 @@
 import { removeAccents } from "../utils/removeAcents";
+import "./styles/InputSearchCountry.css"
 
 const InputSearchCountry = ({ setInputValues }) => {
     const objCodeCountries = [
@@ -90,13 +91,11 @@ const InputSearchCountry = ({ setInputValues }) => {
             event.target.valueInputCity.value = "";
             event.target.valueInputCountry.value = "";
         }
-
     }
 
     return (
-        <footer>
-            <form onSubmit={handleClickButton}>
-                <h4>¿Tienes curiosidad por saber cuál es la temperatura de otro país y de su ciudad? ¡Búscala aquí!</h4>
+        <footer className="footer">
+            <form className="footer__name" onSubmit={handleClickButton}>
                 <div>
                     <label htmlFor="nameCity">¿Cuál es tu ciudad?</label>
                     <input id="valueInputCity" type="text" placeholder="Lima" required/>
@@ -105,7 +104,7 @@ const InputSearchCountry = ({ setInputValues }) => {
                     <label htmlFor="nameCountry">¿Cuál es tu país?</label>
                     <input type="text" id="valueInputCountry" placeholder="Perú" required/>
                 </div>
-                <input type="submit" />
+                <input type="submit" value="Search Country"/>
             </form>
         </footer>
     )

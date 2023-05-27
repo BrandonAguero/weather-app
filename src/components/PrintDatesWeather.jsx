@@ -1,4 +1,5 @@
 import { changeDegreeTemp } from "../utils/changeTemp"
+import "./styles/PrintDatesWeather.css"
 
 const PrintDatesWeather = ({ weather, changeTemp, setChangeTemp}) => {
 
@@ -9,11 +10,11 @@ const PrintDatesWeather = ({ weather, changeTemp, setChangeTemp}) => {
 
     return (
         <>
-            <header>
+            <header className="header">
                 <h1>Weather App</h1>
                 <h2>{weather?.name}, {weather?.sys.country}</h2>
             </header>
-            <main>
+            <main className="main">
                 <figure>
                     <img src={`https://openweathermap.org/img/wn/${weather?.weather[0].icon}@2x.png`} alt="" />
                 </figure>
@@ -26,9 +27,9 @@ const PrintDatesWeather = ({ weather, changeTemp, setChangeTemp}) => {
                     </ul>
                 </article>
             </main>
-            <aside>
+            <aside className="aside">
                 <h2>{changeTemp?.temp} {changeTemp?.degree === 'K' ? '°K' : '°C'}</h2>
-                <button onClick={handleChangeTemp}>Change to{changeTemp?.degree === 'K' ? '°C' : '°K'}</button>
+                <button onClick={handleChangeTemp}><span>Change to{changeTemp?.degree === 'K' ? '°C' : '°K'}</span></button>
             </aside>
         </>
 

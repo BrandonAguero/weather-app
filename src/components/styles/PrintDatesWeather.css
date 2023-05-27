@@ -1,0 +1,72 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 95%;
+}
+.header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+.header h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 95%;
+}
+.main figure img {
+    object-fit: cover;
+}
+.main article h3 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+.main article ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+.main article ul li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.main article ul li :first-of-type {
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+.main article ul li :last-of-type {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+.aside h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.aside button {
+    border: 0;
+    background-image: linear-gradient(0.5turn, #9500ff, #09f, #00DDFF);
+    border-radius: 0.8em;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 0.4em;
+    cursor: pointer;
+    transition: transform .4s;
+}
+button:active {
+    transform: scale(0.9);
+}

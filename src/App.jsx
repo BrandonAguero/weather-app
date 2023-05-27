@@ -62,19 +62,21 @@ function App() {
 
   return (
     <div className={`div div${background}`}>
-      {
-        weather 
-          ? 
-            <>
-              <PrintDatesWeather 
-                weather={weather} 
-                changeTemp={changeTemp} 
-                setChangeTemp={setChangeTemp}
-              />
-              <InputSearchCountry setInputValues={setInputValues} />
-            </>
-          : <Loading />
-      }
+      <div className='container'>
+        {
+          weather 
+            ? 
+              <>
+                <PrintDatesWeather 
+                  weather={weather} 
+                  changeTemp={changeTemp} 
+                  setChangeTemp={setChangeTemp}
+                />
+                <InputSearchCountry setInputValues={setInputValues} />
+              </>
+            : <Loading />
+        }
+      </div>
     </div>
   )
 }
