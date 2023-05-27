@@ -70,3 +70,31 @@
 button:active {
     transform: scale(0.9);
 }
+@media screen and (min-width: 400px) {
+    .header {
+        gap: 1rem;
+    }
+    .main article ul{
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+    .main article h3 {
+        font-size: 2.5rem;
+    }
+    .main article ul li :first-of-type {
+        font-size: 2rem;
+    }
+    .main article ul li :last-of-type {
+        font-size: 2rem;
+    }
+    .aside {
+        gap: 1.5rem;
+    }
+    .aside h2 {
+        font-size: 3rem;
+    }
+    .aside button {
+        padding: 0.8em;
+        font-size: 2rem;
+    }
+}
