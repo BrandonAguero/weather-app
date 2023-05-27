@@ -31,6 +31,7 @@ function App() {
       axios.get(url)
         .then((res) => {
           setWeather(res.data)
+          console.log(res.data)
           setBackground(res.data.weather[0].icon)
           const tempCurrent = Number(res.data.main.temp.toFixed(1));
           const typeTemp = 'K';
@@ -44,20 +45,22 @@ function App() {
     }
   }, [coordsDefect])
 
+  console.log(inputValues)
 
   useEffect(() => {
-    if (coordsDefect) {
-      const url = `https://api.openweathermap.org/geo/1.0/direct?q=${inputValues.cityName},${inputValues.countryName}&limit=${1}&appid=${getApiKey()}`
+    if (coordsDefect && inputValues) {
+      const url = `https://api.openweathermap.org/geo/1.0/direct?q=${inputValues.cityName},${inputValues.countryName}&limit=5&appid=${getApiKey()}`
       axios.get(url)
         .then((res) => {
           const obj = {
             lat: res.data[0].lat,
             lon: res.data[0].lon,
           }
+          console.log(res.data[0])
           setCoordsDefect(obj)
         })
         .catch(err => console.error(err))
-    }
+    } 
   }, [inputValues])
 
   return (

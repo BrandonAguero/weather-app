@@ -7,6 +7,12 @@
     left: calc(50% - 3rem);
     animation: spin 1.2s linear infinite;
 }
+.loading--h1 {
+    font-size: 2rem;
+    position: absolute;
+    bottom: 3rem;
+    text-align: center;
+}
 .loader::before,
 .loader::after {
     content: '';

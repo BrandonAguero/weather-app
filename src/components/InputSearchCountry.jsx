@@ -1,6 +1,7 @@
 import { removeAccents } from "../utils/removeAcents";
 import "./styles/InputSearchCountry.css"
 
+
 const InputSearchCountry = ({ setInputValues }) => {
     const objCodeCountries = [
         {
@@ -9,7 +10,7 @@ const InputSearchCountry = ({ setInputValues }) => {
         },
         {
             name: "bolivia",
-            id: "BO",
+            code: "BO",
         },
         {
             name: "brasil",
@@ -17,7 +18,7 @@ const InputSearchCountry = ({ setInputValues }) => {
         },
         {
             name: "chile",
-            id: "CL",
+            code: "CL",
         },
         {
             name: "colombia",
@@ -25,7 +26,7 @@ const InputSearchCountry = ({ setInputValues }) => {
         },
         {
             name: "ecuador",
-            id: "EC",
+            code: "EC",
         },
         {
             name: "guyana",
@@ -33,7 +34,7 @@ const InputSearchCountry = ({ setInputValues }) => {
         },
         {
             name: "paraguay",
-            id: "PY",
+            code: "PY",
         },
         {
             name: "peru",
@@ -41,7 +42,7 @@ const InputSearchCountry = ({ setInputValues }) => {
         },
         {
             name: "suriname",
-            id: "SR",
+            code: "SR",
         },
         {
             name: "uruguay",
@@ -49,7 +50,7 @@ const InputSearchCountry = ({ setInputValues }) => {
         },
         {
             name: "venezuela",
-            id: "VE",
+            code: "VE",
         },
         {
             name: "mexico",
@@ -57,19 +58,19 @@ const InputSearchCountry = ({ setInputValues }) => {
         },
         {
             name: "estados unidos",
-            id: "US",
+            code: "US",
         },
         {
             name: "costa rica",
-            id: "CR",
+            code: "CR",
         },
         {
             name: "panama",
-            id: "PA",
+            code: "PA",
         },
         {
             name: "espana",
-            id: "ES",
+            code: "ES",
         }
     ]
     
@@ -85,7 +86,7 @@ const InputSearchCountry = ({ setInputValues }) => {
             })
             const objDates = {
                 cityName: valueInputCity,
-                countryName: whatIsCode.id,
+                countryName: whatIsCode.code,
             }
             setInputValues(objDates)
             event.target.valueInputCity.value = "";
