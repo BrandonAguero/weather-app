@@ -1,0 +1,62 @@
+.div {
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.div01d{
+    background-image: url("../images/clear-sky.jpeg");
+}
+.div01n {
+    background-image: url("../images/clear-night.jpeg");
+}
+.div02d {
+    background-image: url("../images/few-clouds.jpeg");
+}
+.div02n {
+    background-image: url("../images/few-clouds-night.jpeg");
+}
+.div03d {
+    background-image: url("../images/scattered-clouds.jpeg");
+}
+.div03n {
+    background-image: url("../images/scattered-clouds-night.jpeg");
+}
+.div04d {
+    background-image: url("../images/broken-clouds.jpeg");
+}
+.div04n {
+    background-image: url("../images/broken-clouds.jpeg");
+}
+.div09d {
+    background-image: url("../images/shower-rain.jpeg");
+}
+.div09n {
+    background-image: url("../images/shower-rain.jpeg");
+}
+.div10d {
+    background-image: url("../images/rain-sun.jpeg");
+}
+.div10n {
+    background-image: url("../images/rain-night.jpeg");
+}
+.div11d {
+    background-image: url("../images/thunderstorm.jpeg");
+}
+.div11n {
+    background-image: url("../images/thunderstorm.jpeg");
+}
+.div13d {
+    background-image: url("../images/snow.jpeg");
+}
+.div13n {
+    background-image: url("../images/snow.jpeg");
+}
+.div50d {
+    background-image: url("../images/mist.jpeg");
+}
+.div50n {
+    background-image: url("../images/mist.jpeg");
+}
