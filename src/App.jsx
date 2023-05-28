@@ -45,7 +45,7 @@ function App() {
   }, [coordsDefect])
 
   useEffect(() => {
-    if (coordsDefect && inputValues) {
+    if (coordsDefect) {
       const url = `https://api.openweathermap.org/geo/1.0/direct?q=${inputValues.cityName},${inputValues.countryName}&limit=5&appid=${getApiKey()}`
       axios.get(url)
         .then((res) => {

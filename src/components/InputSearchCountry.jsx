@@ -79,18 +79,21 @@ const InputSearchCountry = ({ setInputValues }) => {
         const valueInputCity = event.target.valueInputCity.value.trim();
         const valueInputCountry =  removeAccents(event.target.valueInputCountry.value.trim().toLowerCase());
         if (valueInputCity && valueInputCountry) {
-            const whatIsCode = objCodeCountries.find((country) => {
-                if (country.name === valueInputCountry) {
-                    return country
-                }
+            const whatIsCode = objCodeCountries.filter((item) => {
+                return item.name === valueInputCountry
             })
-            const objDates = {
-                cityName: valueInputCity,
-                countryName: whatIsCode.code,
+            if (whatIsCode.length) {
+                const objDates = {
+                    cityName: valueInputCity,
+                    countryName: whatIsCode[0].code,
+                }
+                setInputValues(objDates)
+                event.target.valueInputCity.value = "";
+                event.target.valueInputCountry.value = "";
+            } else {
+                setInputValues(whatIsCode)
             }
-            setInputValues(objDates)
-            event.target.valueInputCity.value = "";
-            event.target.valueInputCountry.value = "";
+
         }
     }
 
