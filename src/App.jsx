@@ -49,11 +49,15 @@ function App() {
       const url = `https://api.openweathermap.org/geo/1.0/direct?q=${inputValues.cityName},${inputValues.countryName}&limit=5&appid=${getApiKey()}`
       axios.get(url)
         .then((res) => {
-          const obj = {
-            lat: res.data[0].lat,
-            lon: res.data[0].lon,
+          if (res.data.lenght) {
+            const obj = {
+              lat: res.data[0].lat,
+              lon: res.data[0].lon,
+            }
+            setCoordsDefect(obj)
+          } else {
+            console.error(new Error("Ciudad no encontrada"))
           }
-          setCoordsDefect(obj)
         })
         .catch(err => console.error(err))
     } 

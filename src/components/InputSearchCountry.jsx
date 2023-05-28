@@ -5,6 +5,14 @@ import "./styles/InputSearchCountry.css"
 const InputSearchCountry = ({ setInputValues }) => {
     const objCodeCountries = [
         {
+            name: "republica dominicana",
+            code: "DO",
+        },
+        {
+            name: "el salvador",
+            code: "SV",
+        },
+        {
             name: "argentina",
             code: "AR",
         },
