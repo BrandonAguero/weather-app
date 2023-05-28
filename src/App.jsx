@@ -22,7 +22,10 @@ function App() {
       }
       setCoordsDefect(obj)
     }
-    navigator.geolocation.getCurrentPosition(success)
+    const error = err => {
+      console.error(err)
+    }
+    navigator.geolocation.getCurrentPosition(success, error)
   }, [])
   
   useEffect(() => {
