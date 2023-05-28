@@ -1,18 +1,18 @@
 const changeDegreeTemp = (tempCurrent) => {
-    const isTypeTemp = tempCurrent.degree === 'K' ? true : false
+    const isTypeTemp = tempCurrent.degree === 'F' ? true : false
     if (isTypeTemp) {
-        const kelvinToCelcius  = Number((tempCurrent.temp - 273.15).toFixed(1));
+        const fahrenheitToCelcius  = Number(((tempCurrent.temp - 32) * (5 / 9)).toFixed(1));
         const degreeCurrent = 'C';
         const resultTempCurrent = {
-            temp: kelvinToCelcius,
+            temp: fahrenheitToCelcius,
             degree: degreeCurrent,
         }
         return resultTempCurrent;
     } else {
-        const celciusToKelvin = Number((tempCurrent.temp + 273.15).toFixed(1));
-        const degreeCurrent = 'K';
+        const celciusToFahrenheit = Number(((tempCurrent.temp) * (9 / 5) + 32).toFixed(1));
+        const degreeCurrent = 'F';
         const resultTempCurrent = {
-            temp: celciusToKelvin,
+            temp: celciusToFahrenheit,
             degree: degreeCurrent,
         }
         return resultTempCurrent;

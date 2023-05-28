@@ -28,8 +28,8 @@ const PrintDatesWeather = ({ weather, changeTemp, setChangeTemp}) => {
                 </article>
             </main>
             <aside className="aside">
-                <h2>{changeTemp?.temp} {changeTemp?.degree === 'K' ? '°K' : '°C'}</h2>
-                <button onClick={handleChangeTemp}><span>Change to{changeTemp?.degree === 'K' ? '°C' : '°K'}</span></button>
+                <h2>{changeTemp?.temp} {changeTemp?.degree === 'F' ? '°F' : '°C'}</h2>
+                <button onClick={handleChangeTemp}><span>Change to{changeTemp?.degree === 'F' ? '°C' : '°F'}</span></button>
             </aside>
         </>
 

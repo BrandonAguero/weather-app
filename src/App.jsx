@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getApiKey } from './utils/getApiKey'
+import { kelvinToFahrenheit} from "./utils/kelvinToFahrenheit"
 import axios from 'axios'
 import PrintDatesWeather from './components/PrintDatesWeather'
 import InputSearchCountry from './components/InputSearchCountry'
@@ -28,15 +29,17 @@ function App() {
     navigator.geolocation.getCurrentPosition(success, error)
   }, [])
   
+
   useEffect(() => {
     if (coordsDefect) {
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${coordsDefect.lat}&lon=${coordsDefect.lon}&appid=${getApiKey()}`
       axios.get(url)
         .then((res) => {
+          console.log(res.data)
           setWeather(res.data)
           setBackground(res.data.weather[0].icon)
-          const tempCurrent = Number(res.data.main.temp.toFixed(1));
-          const typeTemp = 'K';
+          const tempCurrent = +(kelvinToFahrenheit(res.data.main.temp).toFixed(1));
+          const typeTemp = 'F';
           const dateTempObj = {
             temp: tempCurrent,
             degree: typeTemp,
