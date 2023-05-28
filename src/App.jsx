@@ -49,7 +49,7 @@ function App() {
       const url = `https://api.openweathermap.org/geo/1.0/direct?q=${inputValues.cityName},${inputValues.countryName}&limit=5&appid=${getApiKey()}`
       axios.get(url)
         .then((res) => {
-          if (res.data.lenght) {
+          if (res.data.length) {
             const obj = {
               lat: res.data[0].lat,
               lon: res.data[0].lon,
