@@ -95,6 +95,7 @@ const InputSearchCountry = ({ setInputValues }) => {
                     cityName: valueInputCity,
                     countryName: whatIsCode[0].code,
                 }
+                console.log(objDates, "Soy el inputvalue cambiado");
                 setInputValues(objDates)
                 event.target.valueInputCity.value = "";
                 event.target.valueInputCountry.value = "";

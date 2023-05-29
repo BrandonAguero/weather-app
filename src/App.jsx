@@ -29,13 +29,11 @@ function App() {
     navigator.geolocation.getCurrentPosition(success, error)
   }, [])
   
-
   useEffect(() => {
     if (coordsDefect) {
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${coordsDefect.lat}&lon=${coordsDefect.lon}&appid=${getApiKey()}`
       axios.get(url)
         .then((res) => {
-          console.log(res.data)
           setWeather(res.data)
           setBackground(res.data.weather[0].icon)
           const tempCurrent = +(kelvinToFahrenheit(res.data.main.temp).toFixed(1));
@@ -50,20 +48,21 @@ function App() {
     }
   }, [coordsDefect])
 
+
   useEffect(() => {
     if (coordsDefect) {
-      const url = `https://api.openweathermap.org/geo/1.0/direct?q=${inputValues.cityName},${inputValues.countryName}&limit=5&appid=${getApiKey()}`
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValues.cityName},${inputValues.countryName}&appid=${getApiKey()}`
       axios.get(url)
         .then((res) => {
-          if (res.data.length) {
-            const obj = {
-              lat: res.data[0].lat,
-              lon: res.data[0].lon,
-            }
-            setCoordsDefect(obj)
-          } else {
-            console.error(new Error("Ciudad no encontrada"))
+          setWeather(res.data)
+          setBackground(res.data.weather[0].icon)
+          const tempCurrent = +(kelvinToFahrenheit(res.data.main.temp).toFixed(1));
+          const typeTemp = 'F';
+          const dateTempObj = {
+            temp: tempCurrent,
+            degree: typeTemp,
           }
+          setChangeTemp(dateTempObj)
         })
         .catch(err => console.error(err))
     } 
